@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KAFENADED® · Auction House · est. 2018</title>
+<style>
+  :root{
+    --night:#141b30;
+    --ink:#1d2540;
+    --ink-deep:#0e1424;
+    --moon:#dfe4ee;
+    --moon-dim:#9aa3ba;
+    --gold:#c9a76a;
+    --gold-soft:#a88a55;
+    --paper:#f4eede;
+    --paper-ink:#2a2418;
+    --paper-faint:#7a6f58;
+    --rule:rgba(201,167,106,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    background:var(--night);
+    background-image:
+      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(201,167,106,.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(60,75,120,.25), transparent 70%);
+    color:var(--moon);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  a{color:var(--gold);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--moon)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+
+  .caps{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1,h2,h3,.display{
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+    font-weight:400;
+  }
+
+  /* ---------- masthead ---------- */
+  header.masthead{
+    text-align:center;
+    padding:4.5rem 1.25rem 3.5rem;
+    border-bottom:1px solid var(--rule);
+    position:relative;
+  }
+  .masthead .caps{margin-bottom:1.4rem}
+  .masthead h1{
+    font-size:clamp(2.6rem,8vw,4.6rem);
+    letter-spacing:.14em;
+    color:var(--moon);
+    line-height:1.05;
+  }
+  .masthead h1 .reg{
+    font-size:.35em;
+    vertical-align:super;
+    color:var(--gold);
+    letter-spacing:0;
+  }
+  .masthead .est{
+    margin-top:.9rem;
+    color:var(--moon-dim);
+    font-style:italic;
+    font-size:1.02rem;
+  }
+  .masthead .line{
+    max-width:34em;
+    margin:1.6rem auto 0;
+    font-size:1.08rem;
+    color:var(--moon);
+  }
+  .flourish{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    margin-top:2.2rem;color:var(--gold);
+  }
+  .flourish::before,.flourish::after{
+    content:"";height:1px;width:min(120px,22vw);
+    background:linear-gradient(to var(--dir,right),transparent,var(--gold));
+  }
+  .flourish::after{--dir:left}
+  .flourish svg{display:block}
+
+  section{padding:3.6rem 0}
+  .sec-head{text-align:center;margin-bottom:2.4rem}
+  .sec-head .caps{display:block;margin-bottom:.7rem}
+  .sec-head h2{font-size:clamp(1.7rem,4.5vw,2.4rem);letter-spacing:.04em;color:var(--moon)}
+  .sec-head p{color:var(--moon-dim);font-style:italic;margin-top:.5rem}
+
+  /* ---------- commission intro ---------- */
+  .commission-copy{max-width:38em;margin:0 auto 2.6rem;text-align:center;color:var(--moon)}
+  .commission-copy p+p{margin-top:1rem}
+  .commission-copy .made{
+    margin-top:1.4rem;font-size:.92rem;color:var(--moon-dim);
+  }
+
+  /* ---------- lot cards ---------- */
+  .lots{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  @media (max-width:760px){.lots{grid-template-columns:1fr;max-width:26rem;margin:0 auto}}
+  .lot{
+    background:var(--paper);
+    color:var(--paper-ink);
+    border-radius:2px;
+    padding:1.7rem 1.5rem 1.6rem;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+    position:relative;
+    display:flex;flex-direction:column;
+  }
+  .lot::before{
+    content:"";position:absolute;inset:8px;
+    border:1px solid rgba(122,111,88,.45);
+    border-radius:1px;pointer-events:none;
+  }
+  .lot .lotno{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--paper-faint);
+    text-align:center;margin-bottom:.9rem;
+  }
+  .lot h3{
+    text-align:center;font-size:1.32rem;letter-spacing:.02em;line-height:1.25;
+    color:var(--paper-ink);
+  }
+  .lot .form{
+    text-align:center;font-style:italic;color:var(--paper-faint);
+    font-size:.92rem;margin-top:.35rem;margin-bottom:1.1rem;
+  }
+  .lot .price{
+    text-align:center;
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;
+    font-size:2.1rem;color:var(--paper-ink);
+    border-top:1px solid rgba(122,111,88,.35);
+    border-bottom:1px solid rgba(122,111,88,.35);
+    padding:.55rem 0;margin-bottom:.4rem;
+  }
+  .lot .intro{
+    text-align:center;font-size:.8rem;color:#8a5a2b;margin-bottom:1rem;
+  }
+  .lot .intro strong{font-size:1rem}
+  .lot ul{list-style:none;font-size:.92rem;margin-bottom:1.2rem}
+  .lot ul li{padding:.28rem 0;border-bottom:1px dotted rgba(122,111,88,.3)}
+  .lot ul li:last-child{border-bottom:none}
+  .lot .hammer{
+    margin-top:auto;text-align:center;
+  }
+  .lot .hammer a{
+    display:inline-block;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--paper);background:var(--ink-deep);
+    padding:.75rem 1.3rem;text-decoration:none;border-radius:2px;
+  }
+  .lot .hammer a:hover{background:var(--gold-soft);color:var(--ink-deep)}
+  .lot.featured .lotno::after{content:" · the house favorite";letter-spacing:.12em}
+
+  .conditions{
+    max-width:44em;margin:2.2rem auto 0;text-align:center;
+    color:var(--moon-dim);font-size:.94rem;
+  }
+  .conditions strong{color:var(--moon);font-weight:normal;font-style:italic}
+  .conditions .preview{
+    margin-top:1.1rem;color:var(--gold);font-style:italic;font-size:1.02rem;
+  }
+
+  /* ---------- specimen plate ---------- */
+  .plate{
+    max-width:40rem;margin:0 auto;
+    background:linear-gradient(160deg,#182138,#10172b);
+    border:1px solid var(--rule);
+    padding:2.4rem 2rem 2rem;
+    position:relative;text-align:center;
+  }
+  .plate::before{
+    content:"";position:absolute;inset:9px;
+    border:1px solid rgba(201,167,106,.18);pointer-events:none;
+  }
+  .plate .plateno{margin-bottom:1.6rem}
+  .plate blockquote{
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;
+    font-size:clamp(1.12rem,3vw,1.34rem);
+    line-height:1.8;color:var(--moon);font-style:italic;
+  }
+  .plate blockquote p+p{margin-top:1.1rem}
+  .plate .caption{
+    margin-top:1.8rem;padding-top:1.1rem;
+    border-top:1px solid rgba(201,167,106,.25);
+    font-size:.86rem;color:var(--moon-dim);
+  }
+  .plate .caption em{color:var(--gold);font-style:normal}
+
+  /* ---------- steps ---------- */
+  .steps{max-width:44rem;margin:0 auto;counter-reset:step}
+  .step{
+    display:grid;grid-template-columns:3.4rem 1fr;gap:1.2rem;
+    padding:1.5rem 0;border-bottom:1px solid var(--rule);
+  }
+  .step:last-child{border-bottom:none}
+  .step .n{
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;
+    font-size:2rem;color:var(--gold);text-align:center;line-height:1.1;
+  }
+  .step h3{font-size:1.18rem;color:var(--moon);margin-bottom:.35rem}
+  .step p{color:var(--moon-dim);font-size:.98rem}
+  .step p a{white-space:nowrap}
+  .paylinks{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:.6rem}
+  .paylinks a{
+    font-family:Verdana,Geneva,sans-serif;font-size:.7rem;
+    letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+    border:1px solid var(--rule);padding:.5rem .9rem;color:var(--gold);
+  }
+  .paylinks a:hover{background:var(--gold);color:var(--ink-deep)}
+
+  /* ---------- rooms ---------- */
+  .rooms{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:44rem;margin:0 auto}
+  @media (max-width:640px){.rooms{grid-template-columns:1fr}}
+  .room{
+    border:1px solid var(--rule);padding:1.6rem 1.5rem;
+    background:rgba(255,255,255,.02);
+  }
+  .room .caps{display:block;margin-bottom:.6rem}
+  .room h3{font-size:1.25rem;color:var(--moon);margin-bottom:.45rem}
+  .room p{color:var(--moon-dim);font-size:.95rem}
+  .room p a{display:inline-block;margin-top:.5rem}
+  .room .workshop{font-style:italic;color:var(--gold-soft)}
+
+  footer{
+    border-top:1px solid var(--rule);
+    text-align:center;padding:2.6rem 1.25rem 3rem;
+    color:var(--moon-dim);font-size:.9rem;
+  }
+  footer .caps{display:block;margin-bottom:.8rem;color:var(--gold-soft)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="caps">Catalogue · Summer 2026</span>
+  <h1>KAFENADED<span class="reg">®</span></h1>
+  <p class="est">Auction House · established 2018</p>
+  <p class="line">The house deals in fine things, and makes a few of its own. Games, calm narrations, and, this season, storybooks made to order.</p>
+  <div class="flourish" aria-hidden="true">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <path d="M13 2c-2 5.5-3.2 7.4-6.5 8.2 4.6 1.4 8.3 5.8 8.7 13.8 1-7 2.5-10.6 8.8-13.5-6.6-.4-9-3-11-8.5z" fill="#c9a76a" opacity=".9"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+<section id="commission">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="caps">Featured Commission</span>
+      <h2>The Storybook Commission</h2>
+      <p>an original illustrated bedtime story, starring your child</p>
+    </div>
+
+    <div class="commission-copy">
+      <p>Send the house your child's name, age, and the things they love. Within forty-eight hours, the house returns an original illustrated bedtime story with your child at its center, and, should you wish, that story read aloud in Nicole's calm voice, or set to gentle animation and music.</p>
+      <p class="made">Each piece is AI-crafted and human-reviewed by the house: fully original, no licensed characters, made once, for one child.</p>
+    </div>
+
+    <div class="lots">
+      <article class="lot">
+        <div class="lotno">Lot No. I</div>
+        <h3>The Storybook</h3>
+        <p class="form">print-at-home illustrated PDF</p>
+        <div class="price">$25</div>
+        <p class="intro">first three patrons: <strong>$15</strong></p>
+        <ul>
+          <li>Original story starring your child</li>
+          <li>Illustrated, ready to print at home</li>
+          <li>48-hour turnaround</li>
+          <li>One revision included</li>
+        </ul>
+        <div class="hammer"><a href="https://cash.app/$kafenaded/25">Commission · $25</a></div>
+      </article>
+
+      <article class="lot featured">
+        <div class="lotno">Lot No. II</div>
+        <h3>The Storybook, Read Aloud</h3>
+        <p class="form">the storybook · with narrated audio</p>
+        <div class="price">$40</div>
+        <p class="intro">first three patrons: <strong>$25</strong></p>
+        <ul>
+          <li>Everything in Lot No. I</li>
+          <li>~8-minute narration in Nicole's calm voice</li>
+          <li>48-hour turnaround</li>
+          <li>One revision included</li>
+        </ul>
+        <div class="hammer"><a href="https://cash.app/$kafenaded/40">Commission · $40</a></div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. III</div>
+        <h3>The Storybook, In Motion</h3>
+        <p class="form">the storybook · narration · animated film</p>
+        <div class="price">$60</div>
+        <p class="intro">first three patrons: <strong>$40</strong></p>
+        <ul>
+          <li>Everything in Lots I &amp; II</li>
+          <li>Animated film with music</li>
+          <li>48-hour turnaround</li>
+          <li>One revision included</li>
+        </ul>
+        <div class="hammer"><a href="https://cash.app/$kafenaded/60">Commission · $60</a></div>
+      </article>
+    </div>
+
+    <div class="conditions">
+      <p><strong>Conditions of sale.</strong> 48-hour turnaround · one revision included · a sibling edition of the same story is discounted, ask the house.</p>
+      <p class="preview">Before any payment, the house shows you a finished page of your own child's story. You approve it first. That is how an auction house works: you inspect the piece before you bid.</p>
+    </div>
+  </div>
+</section>
+
+<section id="specimen">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="caps">From the Catalogue</span>
+      <h2>Specimen</h2>
+      <p>lines from a finished commission · <em>Maya and the Moonlight Fox</em>, for Maya, age five</p>
+    </div>
+    <figure class="plate">
+      <div class="plateno caps">Plate I · Maya and the Moonlight Fox</div>
+      <blockquote>
+        <p>&ldquo;Once upon a quiet evening, when the sky had turned the color of blueberries, a girl named Maya was tucked in bed, not quite sleepy yet.&rdquo;</p>
+        <p>&ldquo;It was a small fox with a tail like a paintbrush dipped in moonlight. The very tip of it glowed a gentle silver.&rdquo;</p>
+        <p>&ldquo;Whenever you see moonlight on your blanket, said the fox, that is me, saying goodnight.&rdquo;</p>
+      </blockquote>
+      <figcaption class="caption">Commissioned for a five-year-old who loves foxes. Storybook, narration in Nicole's voice, and animated film · <em>your child's story reads like this, about them</em>.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="caps">How to Commission</span>
+      <h2>Three steps, start to bedtime</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">I</div>
+        <div>
+          <h3>Send the child's details</h3>
+          <p>Name, age, favorite animal, and anything about your family you'd like woven in. Send by Instagram DM to <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">II</div>
+        <div>
+          <h3>Approve your preview page</h3>
+          <p>The house sends a finished page of your child's story before any payment. If it isn't right, say so. Nothing is owed until you approve.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">III</div>
+        <div>
+          <h3>Settle by CashApp</h3>
+          <p>Once you approve, settle the commission and the house delivers within 48 hours. Venmo <em>@kafenaded</em> also accepted.</p>
+          <div class="paylinks">
+            <a href="https://cash.app/$kafenaded/25">CashApp · $25</a>
+            <a href="https://cash.app/$kafenaded/40">CashApp · $40</a>
+            <a href="https://cash.app/$kafenaded/60">CashApp · $60</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rooms">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="caps">The House's Other Rooms</span>
+      <h2>What else the house makes</h2>
+    </div>
+    <div class="rooms">
+      <div class="room">
+        <span class="caps">The Listening Room</span>
+        <h3>Bedtime Business Classics</h3>
+        <p>Business classics, narrated calmly for the end of the day. Fall asleep a little wiser.</p>
+        <p><a href="https://youtube.com/@kafenaded">youtube.com/@kafenaded</a></p>
+      </div>
+      <div class="room">
+        <span class="caps">The Workshop</span>
+        <h3>Myofell</h3>
+        <p>Games from the house's own workshop.</p>
+        <p class="workshop">In the workshop · not yet on the floor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="caps">KAFENADED® · Auction House est. 2018</span>
+  <p>Instagram <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a></p>
+</footer>
+
+</body>
+</html>
