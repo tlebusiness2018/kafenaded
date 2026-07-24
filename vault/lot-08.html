@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141b30">
+<title>Lot 08: Untitled | The KAFENADED Vault</title>
+<meta name="description" content="Fois S. Becker 1966. Untitled. Price on inquiry from the KAFENADED Vault.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --night:#141b30;
+    --ink:#1d2540;
+    --ink-deep:#0e1424;
+    --moon:#dfe4ee;
+    --moon-dim:#9aa3ba;
+    --gold:#c9a76a;
+    --gold-soft:#a88a55;
+    --paper:#f4eede;
+    --paper-ink:#2a2418;
+    --paper-faint:#7a6f58;
+    --rule:rgba(201,167,106,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    background:var(--night);
+    background-image:
+      radial-gradient(ellipse 90% 45% at 50% -5%,rgba(201,167,106,.10),transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%,rgba(60,75,120,.25),transparent 70%);
+    color:var(--moon);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  a{color:var(--gold);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--moon)}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+  .caps{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+  }
+  h1,h2,h3{
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+    font-weight:400;
+  }
+  header.masthead{
+    text-align:center;padding:3.6rem 1.25rem 2.8rem;border-bottom:1px solid var(--rule);
+  }
+  .masthead .caps{display:block;margin-bottom:1.2rem}
+  .masthead h1{
+    max-width:15em;margin:0 auto;font-size:clamp(2.2rem,7vw,4rem);
+    letter-spacing:.035em;color:var(--moon);line-height:1.08;
+  }
+  .masthead .artist{margin-top:.9rem;color:var(--moon-dim);font-style:italic;font-size:1.08rem}
+  .flourish{display:flex;align-items:center;justify-content:center;gap:.9rem;margin-top:2rem}
+  .flourish::before,.flourish::after{
+    content:"";height:1px;width:min(120px,22vw);
+    background:linear-gradient(to var(--dir,right),transparent,var(--gold));
+  }
+  .flourish::after{--dir:left}
+  .diamond{width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+  main{padding:3.7rem 0}
+  .plate{
+    max-width:46rem;margin:0 auto;background:var(--paper);color:var(--paper-ink);
+    padding:1.25rem 1.25rem 2.2rem;box-shadow:0 14px 34px rgba(0,0,0,.45);
+    position:relative;
+  }
+  .plate::before{
+    content:"";position:absolute;inset:8px;border:1px solid rgba(122,111,88,.45);
+    pointer-events:none;
+  }
+  .artwork{position:relative;text-align:center;margin-bottom:1.9rem}
+  .artwork img{
+    display:block;max-width:100%;width:auto;height:auto;max-height:72vh;margin:0 auto;
+    border:1px solid rgba(122,111,88,.45);box-shadow:0 7px 20px rgba(0,0,0,.25);
+  }
+  .object-data{position:relative;text-align:center;padding:0 1rem}
+  .object-data .caps{color:var(--paper-faint);display:block;margin-bottom:.5rem}
+  .object-data h2{font-size:1.5rem;line-height:1.25}
+  .medium{margin-top:.35rem;color:var(--paper-faint);font-style:italic}
+  .price{
+    max-width:18rem;margin:1.25rem auto 0;padding:.55rem 0;
+    border-top:1px solid rgba(122,111,88,.35);
+    border-bottom:1px solid rgba(122,111,88,.35);
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;
+    font-size:1.18rem;font-style:italic;
+  }
+  .description{
+    position:relative;max-width:38rem;margin:2rem auto 0;padding-top:1.7rem;
+    border-top:1px solid rgba(122,111,88,.35);font-size:.98rem;
+  }
+  .description p+p{margin-top:1rem}
+  .holding{
+    position:relative;max-width:38rem;margin:1.6rem auto 0;padding-top:1.25rem;
+    border-top:1px solid rgba(122,111,88,.35);text-align:center;
+    color:var(--paper-faint);font-style:italic;
+  }
+  .disambiguation{
+    position:relative;max-width:38rem;margin:1.1rem auto 0;text-align:center;
+    color:var(--paper-ink);font-size:.92rem;font-weight:bold;
+  }
+  .inquiry{max-width:46rem;margin:2.2rem auto 0;text-align:center}
+  .inquiry p{color:var(--moon-dim);margin-bottom:1.1rem}
+  .buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem}
+  .button{
+    display:inline-block;font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
+    color:var(--ink-deep);background:var(--gold);padding:.8rem 1.1rem;border:1px solid var(--gold);
+  }
+  .button.secondary{color:var(--gold);background:transparent}
+  .button:hover{background:var(--moon);color:var(--ink-deep);border-color:var(--moon)}
+  .lot-nav{
+    max-width:46rem;margin:2.7rem auto 0;padding-top:1.3rem;border-top:1px solid var(--rule);
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;
+    font-size:.9rem;
+  }
+  .lot-nav .next{text-align:right}
+  .lot-nav .back{text-align:center}
+  footer{
+    border-top:1px solid var(--rule);text-align:center;padding:2.6rem 1.25rem 3rem;
+    color:var(--moon-dim);font-size:.9rem;
+  }
+  footer .caps{display:block;margin-bottom:.8rem;color:var(--gold-soft)}
+  @media(max-width:600px){
+    header.masthead{padding-top:2.8rem}
+    main{padding-top:2.5rem}
+    .plate{padding:.85rem .85rem 1.9rem}
+    .object-data,.description{padding-left:.55rem;padding-right:.55rem}
+    .lot-nav{grid-template-columns:1fr 1fr}
+    .lot-nav .back{grid-column:1 / -1;grid-row:2}
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <span class="caps">The Vault · Lot 08</span>
+  <h1>Untitled</h1>
+  <p class="artist">Fois S. Becker 1966</p>
+  <div class="flourish" aria-hidden="true"><span class="diamond"></span></div>
+</header>
+
+<main>
+  <div class="wrap">
+    <article class="plate">
+      <figure class="artwork">
+        <img src="../art/lot-08.jpg" alt="Untitled, Fois S. Becker 1966, Mixed media with sand on canvas, framed">
+      </figure>
+      <div class="object-data">
+        <span class="caps">Attribution as catalogued</span>
+        <h2>Fois S. Becker 1966</h2>
+        <p class="medium">Mixed media with sand on canvas, framed</p>
+        <p class="price">price on inquiry</p>
+      </div>
+      <div class="description">
+          <p>Fois S. Becker 1966</p>
+          <p>Mixed media with sand on canvas, framed.</p>
+          <p>A mid-century inspired figurative work marked by whimsy and material play. Becker&#x27;s practice draws from pop aesthetics while maintaining a painterly seriousness through texture and composition.</p>
+          <p>The subject appears with deliberate charm rather than spectacle, balancing humor with restraint. Surface variation and color are used not for excess, but for rhythm and tone.</p>
+          <p>A lively yet composed example of Becker&#x27;s approach, appealing to collectors drawn to wit, nostalgia, and controlled expression.</p>
+      </div>
+      <p class="holding">Held in the house vault. Measurements and condition photos on request.</p>
+    </article>
+
+    <div class="inquiry">
+      <p>To inquire about Lot 08, send the house a DM and include the lot number.</p>
+      <div class="buttons">
+        <a class="button" href="https://instagram.com/kafenadedcompany">DM @kafenadedcompany</a>
+        <a class="button secondary" href="https://www.instagram.com/kafenadedcompany/p/DUHbOH4D-FR/">View Instagram plate</a>
+      </div>
+    </div>
+
+    <nav class="lot-nav" aria-label="Vault lots">
+      <a class="prev" href="lot-07.html">← Lot 07</a>
+      <a class="back" href="../vault.html">Back to the vault</a>
+      <a class="next" href="lot-09.html">Lot 09 →</a>
+    </nav>
+  </div>
+</main>
+
+<footer>
+  <span class="caps">KAFENADED® · Auction House est. 2018</span>
+  <p>Instagram <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a></p>
+</footer>
+</body>
+</html>
