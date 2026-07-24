@@ -11,17 +11,17 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{
-    --night:#141b30;
-    --ink:#1d2540;
-    --ink-deep:#0e1424;
-    --moon:#dfe4ee;
-    --moon-dim:#9aa3ba;
-    --gold:#c9a76a;
-    --gold-soft:#a88a55;
-    --paper:#f4eede;
-    --paper-ink:#2a2418;
-    --paper-faint:#7a6f58;
-    --rule:rgba(201,167,106,.35);
+    --night:#0a0c0a;
+    --ink:#12180f;
+    --ink-deep:#060806;
+    --moon:#eef1ea;
+    --moon-dim:#8fa397;
+    --gold:#3fb078;
+    --gold-soft:#2e8659;
+    --paper:#f3f4ee;
+    --paper-ink:#10140e;
+    --paper-faint:#5f7566;
+    --rule:rgba(63,176,120,.35);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -32,8 +32,8 @@
   body{
     background:var(--night);
     background-image:
-      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(201,167,106,.10), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(60,75,120,.25), transparent 70%);
+      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(63,176,120,.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(30,80,55,.25), transparent 70%);
     color:var(--moon);
     font-family:Georgia,'Times New Roman',serif;
     line-height:1.65;
@@ -152,7 +152,7 @@
     padding:.55rem 0;margin-bottom:.4rem;
   }
   .lot .intro{
-    text-align:center;font-size:.8rem;color:#8a5a2b;margin-bottom:1rem;
+    text-align:center;font-size:.8rem;color:#256b47;margin-bottom:1rem;
   }
   .lot .intro strong{font-size:1rem}
   .lot ul{list-style:none;font-size:.92rem;margin-bottom:1.2rem}
@@ -183,14 +183,14 @@
   /* ---------- specimen plate ---------- */
   .plate{
     max-width:40rem;margin:0 auto;
-    background:linear-gradient(160deg,#182138,#10172b);
+    background:linear-gradient(160deg,#10160f,#0a0f09);
     border:1px solid var(--rule);
     padding:2.4rem 2rem 2rem;
     position:relative;text-align:center;
   }
   .plate::before{
     content:"";position:absolute;inset:9px;
-    border:1px solid rgba(201,167,106,.18);pointer-events:none;
+    border:1px solid rgba(63,176,120,.18);pointer-events:none;
   }
   .plate .plateno{margin-bottom:1.6rem}
   .plate blockquote{
@@ -201,7 +201,7 @@
   .plate blockquote p+p{margin-top:1.1rem}
   .plate .caption{
     margin-top:1.8rem;padding-top:1.1rem;
-    border-top:1px solid rgba(201,167,106,.25);
+    border-top:1px solid rgba(63,176,120,.25);
     font-size:.86rem;color:var(--moon-dim);
   }
   .plate .caption em{color:var(--gold);font-style:normal}
@@ -247,8 +247,6 @@
     color:var(--moon-dim);font-size:.9rem;
   }
   footer .caps{display:block;margin-bottom:.8rem;color:var(--gold-soft)}
-  footer .house-nav{margin-bottom:.7rem}
-  footer .house-nav .dot{color:var(--moon-dim);padding:0 .55rem}
 </style>
 </head>
 <body>
@@ -260,7 +258,7 @@
   <p class="line">The house deals in fine things, and makes a few of its own. Games, calm narrations, and, this season, storybooks made to order.</p>
   <div class="flourish" aria-hidden="true">
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-      <path d="M13 2c-2 5.5-3.2 7.4-6.5 8.2 4.6 1.4 8.3 5.8 8.7 13.8 1-7 2.5-10.6 8.8-13.5-6.6-.4-9-3-11-8.5z" fill="#c9a76a" opacity=".9"/>
+      <path d="M13 2c-2 5.5-3.2 7.4-6.5 8.2 4.6 1.4 8.3 5.8 8.7 13.8 1-7 2.5-10.6 8.8-13.5-6.6-.4-9-3-11-8.5z" fill="#3fb078" opacity=".9"/>
     </svg>
   </div>
 </header>
@@ -417,7 +415,6 @@
 
 <footer>
   <span class="caps">KAFENADED® · Auction House est. 2018</span>
-  <p class="house-nav"><a href="vault.html">The Vault</a><span class="dot" aria-hidden="true">·</span><a href="commission.html">Commission a Storybook</a><span class="dot" aria-hidden="true">·</span><a href="lab/quote-followup.html">The Lab</a></p>
   <p>Instagram <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a></p>
 </footer>
 
