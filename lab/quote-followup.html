@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuoteNudge · KAFENADED Lab</title>
+<style>
+  :root{
+    --night:#141b30;
+    --ink:#1d2540;
+    --ink-deep:#0e1424;
+    --moon:#dfe4ee;
+    --moon-dim:#9aa3ba;
+    --gold:#c9a76a;
+    --gold-soft:#a88a55;
+    --paper:#f4eede;
+    --paper-ink:#2a2418;
+    --paper-faint:#7a6f58;
+    --rule:rgba(201,167,106,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    background:var(--night);
+    background-image:
+      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(201,167,106,.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(60,75,120,.25), transparent 70%);
+    color:var(--moon);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  a{color:var(--gold);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--moon)}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 1.25rem}
+  .caps{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;font-weight:400}
+
+  header.masthead{
+    text-align:center;
+    padding:4rem 1.25rem 3rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead .caps{margin-bottom:1.2rem;display:block}
+  .masthead h1{font-size:clamp(2.2rem,7vw,3.6rem);letter-spacing:.08em;line-height:1.1}
+  .masthead .est{margin-top:.9rem;color:var(--moon-dim);font-style:italic}
+  .flourish{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    margin-top:2rem;color:var(--gold);
+  }
+  .flourish::before,.flourish::after{
+    content:"";height:1px;width:min(120px,22vw);
+    background:linear-gradient(to var(--dir,right),transparent,var(--gold));
+  }
+  .flourish::after{--dir:left}
+
+  section{padding:3rem 0}
+  .sec-head{text-align:center;margin-bottom:1.8rem}
+  .sec-head .caps{display:block;margin-bottom:.6rem}
+  .sec-head h2{font-size:clamp(1.5rem,4vw,2rem);letter-spacing:.04em}
+
+  .lede{max-width:36em;margin:0 auto;text-align:center;color:var(--moon)}
+  .lede p+p{margin-top:1rem}
+  .dim{color:var(--moon-dim)}
+
+  .card{
+    background:var(--paper);
+    color:var(--paper-ink);
+    border-radius:2px;
+    padding:1.8rem 1.6rem;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+    margin-top:2rem;
+  }
+  .card h3{letter-spacing:.03em;margin-bottom:.8rem}
+  .card ol{margin:.6rem 0 0 1.2rem}
+  .card ol li+li{margin-top:.5rem}
+  .card .fine{color:var(--paper-faint);font-size:.92rem;margin-top:1.1rem;font-style:italic}
+
+  .price{
+    text-align:center;margin-top:2.4rem;
+  }
+  .price .amount{
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+    font-size:2.6rem;color:var(--gold);
+  }
+  .price .note{color:var(--moon-dim);font-style:italic;margin-top:.3rem}
+
+  .cta{
+    text-align:center;margin-top:2.6rem;padding:2rem 1.5rem;
+    border:1px solid var(--rule);border-radius:2px;
+  }
+  .cta .caps{display:block;margin-bottom:.9rem}
+  .cta p{max-width:32em;margin:0 auto}
+  .cta .big{
+    display:inline-block;margin-top:1.2rem;
+    font-family:Verdana,Geneva,sans-serif;font-size:.8rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    border:1px solid var(--gold);color:var(--gold);
+    padding:.85rem 1.6rem;border-radius:2px;text-decoration:none;
+  }
+  .cta .big:hover{background:rgba(201,167,106,.12);color:var(--moon)}
+
+  footer{
+    border-top:1px solid var(--rule);
+    text-align:center;padding:2.5rem 1.25rem 3rem;
+    color:var(--moon-dim);font-size:.95rem;
+  }
+  footer .caps{display:block;margin-bottom:.7rem}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="caps">KAFENADED Lab · Launching Soon</span>
+  <h1>QuoteNudge</h1>
+  <p class="est">Quotes you sent, followed up. Every time. Automatically.</p>
+  <div class="flourish" aria-hidden="true">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3" fill="currentColor"/></svg>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="lede">
+      <p>You spend an hour writing an estimate, hit send, and get busy on the next job. Nearly half of all quotes are never followed up on. That is where the work you already won quietly walks away.</p>
+      <p class="dim">Industry studies put close rates around 22% without follow-up and 35% or better with a simple, consistent sequence. Not magic. Just showing up on day 2, day 5, and day 9.</p>
+    </div>
+
+    <div class="card">
+      <h3>How it works</h3>
+      <ol>
+        <li>You send your quote the way you always do.</li>
+        <li>Forward a copy to your QuoteNudge address, or log it in one 10-second form.</li>
+        <li>QuoteNudge runs the follow-up sequence for you: a polite nudge on day 2, a check-in on day 5, a last call on day 9. Written to sound like you, not like software.</li>
+        <li>The customer replies to YOU. You just close the job.</li>
+      </ol>
+      <p class="fine">One tool, one job. No CRM to learn, no dashboard you will never open, no contract.</p>
+    </div>
+
+    <div class="price">
+      <div class="amount">$29 / month</div>
+      <p class="note">Flat. Cancel anytime. The big suites charge $150 to $600 a month to do this plus fifty things you do not need.</p>
+    </div>
+
+    <div class="cta">
+      <span class="caps">Reserve a spot</span>
+      <p>QuoteNudge is being built by KAFENADED and has not launched yet. We are opening it to a small first group. If you send quotes and hate chasing them, reserve a spot now. No payment today. Reserving costs nothing and holds your place and your price.</p>
+      <p style="margin-top:1rem">DM the word <strong>QUOTE</strong> to <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a> on Instagram, or reply on the community post that brought you here.</p>
+      <a class="big" href="https://instagram.com/kafenadedcompany">DM QUOTE to reserve</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="caps">KAFENADED · est. 2018</span>
+  <p>Built by the KAFENADED house. Launching soon. Honest by design: no invented reviews, no fake counters, no pressure timers. If we do not launch, nobody paid anything.</p>
+  <p style="margin-top:.6rem"><a href="../index.html">Back to the house</a></p>
+</footer>
+
+</body>
+</html>
