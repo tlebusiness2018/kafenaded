@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!--
+    PLACEHOLDER MARK. The real KAFENADED logo is a black rotated square
+    (diamond) bearing a white blackletter k. This file approximates it with
+    a hand-authored gothic-leaning k until the owner's real logo file lands.
+    Replace this entire file with the official mark when available.
+  -->
+  <rect x="14.06" y="14.06" width="35.88" height="35.88" transform="rotate(45 32 32)" fill="#000000"/>
+  <!-- gothic-leaning k: heavy vertical stem with flared serifs, angled arm and leg -->
+  <g fill="#ffffff">
+    <!-- stem -->
+    <path d="M26.5 18.5 L31.5 18.5 L31.5 45.5 L26.5 45.5 L27.8 43 L27.8 21 Z"/>
+    <!-- top serif flare -->
+    <path d="M25 18.5 L33 18.5 L31.5 21.5 L26.5 21.5 Z"/>
+    <!-- bottom serif flare -->
+    <path d="M25 45.5 L33 45.5 L31.5 42.5 L26.5 42.5 Z"/>
+    <!-- arm, angled up-right with a cut tip -->
+    <path d="M31.5 33.5 L38.5 25 L41.5 25 L40 28 L34.5 34 Z"/>
+    <!-- leg, angled down-right with a flared foot -->
+    <path d="M33 33 L36.5 34.5 L41 43 L42.5 45.5 L37.5 45.5 L33.5 37 Z"/>
+  </g>
+</svg>

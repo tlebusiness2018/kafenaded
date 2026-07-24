@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE VAULT · KAFENADED® · Auction House · est. 2018</title>
+<style>
+  :root{
+    --night:#141b30;
+    --ink:#1d2540;
+    --ink-deep:#0e1424;
+    --moon:#dfe4ee;
+    --moon-dim:#9aa3ba;
+    --gold:#c9a76a;
+    --gold-soft:#a88a55;
+    --paper:#f4eede;
+    --paper-ink:#2a2418;
+    --paper-faint:#7a6f58;
+    --rule:rgba(201,167,106,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    background:var(--night);
+    background-image:
+      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(201,167,106,.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(60,75,120,.25), transparent 70%);
+    color:var(--moon);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  a{color:var(--gold);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--moon)}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+  .caps{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  h1,h2,h3{
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+    font-weight:400;
+  }
+
+  header.masthead{
+    text-align:center;
+    padding:4.5rem 1.25rem 3.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .masthead .caps{margin-bottom:1.4rem;display:block}
+  .masthead h1{
+    font-size:clamp(2.2rem,7vw,3.8rem);
+    letter-spacing:.14em;
+    color:var(--moon);
+    line-height:1.05;
+  }
+  .masthead .est{
+    margin-top:.9rem;
+    color:var(--moon-dim);
+    font-style:italic;
+    font-size:1.02rem;
+  }
+  .masthead .line{
+    max-width:34em;
+    margin:1.6rem auto 0;
+    font-size:1.08rem;
+    color:var(--moon);
+  }
+  .flourish{
+    display:flex;align-items:center;justify-content:center;gap:.9rem;
+    margin-top:2.2rem;color:var(--gold);
+  }
+  .flourish::before,.flourish::after{
+    content:"";height:1px;width:min(120px,22vw);
+    background:linear-gradient(to var(--dir,right),transparent,var(--gold));
+  }
+  .flourish::after{--dir:left}
+
+  section{padding:3.6rem 0}
+  .vault-copy{max-width:38em;margin:0 auto 2.6rem;text-align:center;color:var(--moon)}
+  .vault-copy p+p{margin-top:1rem}
+  .vault-copy .made{margin-top:1.4rem;font-size:.92rem;color:var(--moon-dim)}
+
+  .lots{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+  @media (max-width:760px){.lots{grid-template-columns:1fr;max-width:26rem;margin:0 auto}}
+  .lot{
+    background:var(--paper);
+    color:var(--paper-ink);
+    border-radius:2px;
+    padding:1.7rem 1.5rem 1.6rem;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+    position:relative;
+    display:flex;flex-direction:column;
+  }
+  .lot::before{
+    content:"";position:absolute;inset:8px;
+    border:1px solid rgba(122,111,88,.45);
+    border-radius:1px;pointer-events:none;
+  }
+  .lot .lotno{
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--paper-faint);
+    text-align:center;margin-bottom:.9rem;
+  }
+  .lot h3{
+    text-align:center;font-size:1.32rem;letter-spacing:.02em;line-height:1.25;
+    color:var(--paper-ink);
+  }
+  .lot .artist{
+    text-align:center;font-size:.95rem;color:var(--paper-ink);
+    margin-top:.3rem;
+  }
+  .lot .form{
+    text-align:center;font-style:italic;color:var(--paper-faint);
+    font-size:.92rem;margin-top:.35rem;margin-bottom:1.05rem;
+  }
+  .lot .desc{
+    font-size:.92rem;line-height:1.6;
+    border-top:1px solid rgba(122,111,88,.35);
+    padding-top:.9rem;margin-bottom:1.1rem;
+  }
+  .lot .price{
+    text-align:center;
+    font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;
+    font-size:1.15rem;font-style:italic;color:var(--paper-ink);
+    border-top:1px solid rgba(122,111,88,.35);
+    border-bottom:1px solid rgba(122,111,88,.35);
+    padding:.55rem 0;margin-bottom:1.1rem;
+  }
+  .lot .hammer{margin-top:auto;text-align:center}
+  .lot .hammer a{
+    display:inline-block;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--paper);background:var(--ink-deep);
+    padding:.75rem 1.3rem;text-decoration:none;border-radius:2px;
+    margin:.2rem;
+  }
+  .lot .hammer a:hover{background:var(--gold-soft);color:var(--ink-deep)}
+  .lot .hammer .view{
+    display:block;margin-top:.6rem;
+    font-size:.85rem;color:var(--paper-faint);
+  }
+
+  .conditions{
+    max-width:44em;margin:2.2rem auto 0;text-align:center;
+    color:var(--moon-dim);font-size:.94rem;
+  }
+  .conditions strong{color:var(--moon);font-weight:normal;font-style:italic}
+
+  footer{
+    border-top:1px solid var(--rule);
+    text-align:center;padding:2.6rem 1.25rem 3rem;
+    color:var(--moon-dim);font-size:.9rem;
+  }
+  footer .caps{display:block;margin-bottom:.8rem;color:var(--gold-soft)}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="caps">The Vault</span>
+  <h1>WORKS HELD BY THE HOUSE</h1>
+  <p class="est">KAFENADED® · Auction House · established 2018</p>
+  <p class="line">Fourteen works from the house's own vault, presented on the floor at Instagram. Each plate below opens the work itself. To inquire after any lot, send the house a message.</p>
+  <div class="flourish" aria-hidden="true">
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <path d="M13 2c-2 5.5-3.2 7.4-6.5 8.2 4.6 1.4 8.3 5.8 8.7 13.8 1-7 2.5-10.6 8.8-13.5-6.6-.4-9-3-11-8.5z" fill="#c9a76a" opacity=".9"/>
+    </svg>
+  </div>
+</header>
+
+<main>
+<section id="vault">
+  <div class="wrap">
+    <div class="vault-copy">
+      <p>The vault is not a shop window. These works are held, not hurried. Descriptions are given as the house has presented them; the piece itself may be viewed at its plate on Instagram, and condition photographs are furnished on request.</p>
+      <p class="made">Every lot: price on inquiry · Inquiries by DM to <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a></p>
+    </div>
+
+    <div class="lots">
+
+      <article class="lot">
+        <div class="lotno">Lot No. I</div>
+        <h3>My friends are gone...</h3>
+        <p class="artist">Raleinn 1928</p>
+        <p class="form">watercolor on paper</p>
+        <p class="desc">A contemporary figurative work engaging themes of impermanence, endurance, and psychological transition. Long vaulted and only recently presented. A solitary figure emerges in partial abstraction; gesture and erasure function together, allowing the image to exist between clarity and dissolution.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHiuhbFLX0/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. II</div>
+        <h3>Untitled Landscape</h3>
+        <p class="artist">Joyce Slick (1927–2018)</p>
+        <p class="form">oil on canvas</p>
+        <p class="desc">A contemplative landscape reflecting Slick's commitment to stillness, atmosphere, and inner perception. The composition invites presence rather than spectacle; subtle shifts in tone and structure guide the viewer toward reflection.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHigGEib4R/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. III</div>
+        <h3>Untitled Americana Scene</h3>
+        <p class="artist">Casia Dodson</p>
+        <p class="form">oil on canvas, framed</p>
+        <p class="desc">A naïve Americana work centered on community life and narrative observation. Figures and activities unfold within a shared landscape, allowing moments of daily life to accumulate without hierarchy. A composed example in the narrative tradition of American folk painting.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHh8g5iXDs/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. IV</div>
+        <h3>Untitled Abstraction</h3>
+        <p class="artist">TiTo 1970</p>
+        <p class="form">pastel on board, framed</p>
+        <p class="desc">A mid-century work engaging impasto abstraction through narrative suggestion and material intensity. The composition suggests movement without literal depiction, allowing color and density to carry the work's internal rhythm.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHhW8RCYy3/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. V</div>
+        <h3>Untitled Village Scene</h3>
+        <p class="artist">Girldine Fallon Merrill (1920–2003)</p>
+        <p class="form">mixed media on canvas, framed</p>
+        <p class="desc">An accomplished example of Merrill's narrative driven naïve practice, rooted in memory, ritual, and communal life. The composition unfolds as a dreamlike village scene where figures gather and moments quietly accumulate.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHfGlSCag5/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. VI</div>
+        <h3>Untitled Figurative, I</h3>
+        <p class="artist">Fois S. Becker 1966</p>
+        <p class="form">mixed media with sand on canvas, framed</p>
+        <p class="desc">A whimsical figurative work drawing from pop art traditions and material play. The figure is rendered with deliberate charm rather than excess, balancing lightness with compositional discipline.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHdELXD2Ky/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. VII</div>
+        <h3>Untitled Figurative, II</h3>
+        <p class="artist">Fois S. Becker 1966</p>
+        <p class="form">mixed media with sand on canvas, framed</p>
+        <p class="desc">A whimsical figurative work grounded in childlike nostalgia and material play. The image carries a sense of youthful immediacy, rendered without sentimentality; playfulness coexists with restraint.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHb9I5D4e7/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. VIII</div>
+        <h3>Untitled Figurative, III</h3>
+        <p class="artist">Fois S. Becker 1966</p>
+        <p class="form">mixed media with sand on canvas, framed</p>
+        <p class="desc">A mid-century inspired figurative work marked by whimsy and material play, drawing from pop aesthetics while maintaining a painterly seriousness through texture and composition.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHbOH4D-FR/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. IX</div>
+        <h3>Untitled</h3>
+        <p class="artist">Marie Hudson (1926–2019)</p>
+        <p class="form">mature period</p>
+        <p class="desc">Executed during the artist's mature period, reflecting Hudson's sustained exploration of psychological tension and organic symbolism. A solitary figure emerges in quiet contrast to its surrounding environment, where organic forms press inward without overt drama.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHaUdGj4Cc/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. X</div>
+        <h3>Untitled Figurative</h3>
+        <p class="artist">A. Beard 1997</p>
+        <p class="form">contemporary figurative</p>
+        <p class="desc">A contemporary figurative work examining consciousness, endurance, and impermanence. Through monumentality and restraint, Beard presents the human figure as both presence and condition. A meditation on existence itself, rendered without spectacle.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHZ0U3D8Yu/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. XI</div>
+        <h3>Untitled, Father and Child</h3>
+        <p class="artist">Dorothy E. Kosoff (1925–2003)</p>
+        <p class="form">minimalist narrative</p>
+        <p class="desc">A minimalist narrative centered on intimate human connection. Two figures meet in stillness, rendered with deliberate economy; absence and presence hold equal weight. A meditation on trust, intimacy, and the enduring strength of human bonds.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHZTDHj0Jv/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. XII</div>
+        <h3>Untitled Portrait Series</h3>
+        <p class="artist">Dorothy E. Kosoff (1925–2003)</p>
+        <p class="form">restrained portrait series</p>
+        <p class="desc">A restrained portrait series examining leadership and moral resolve. Lincoln, King, Kennedy, and an unnamed figure of hope appear not as likenesses, but as symbols of conviction, progress, and quiet authority.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHY0gPD_Ov/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. XIII</div>
+        <h3>Masterpiece Clown 1967</h3>
+        <p class="artist">Dorothy E. Kosoff (1925–2003)</p>
+        <p class="form">framed in an ornate vintage setting</p>
+        <p class="desc">A quiet study in duality. Joy held in place, sorrow allowed to surface. Kosoff completed fewer than one hundred works in her lifetime; this painting remains one of her most emotionally resolved.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHYG79D60N/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+      <article class="lot">
+        <div class="lotno">Lot No. XIV</div>
+        <h3>Masterpiece Clown</h3>
+        <p class="artist">Dorothy E. Kosoff (1925–2003)</p>
+        <p class="form">first public presentation</p>
+        <p class="desc">A study in vulnerability and emotional duality. Heartbreak and joy held in the same moment. Among approximately one hundred works by Kosoff, this marks the first public presentation of the piece.</p>
+        <div class="price">price on inquiry</div>
+        <div class="hammer">
+          <a href="https://www.instagram.com/kafenadedcompany/p/DUHXdH9gchy/">View the plate</a>
+          <span class="view">Inquiries: DM @kafenadedcompany</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="conditions">
+      <p><strong>Conditions of sale.</strong> Every lot is price on inquiry. Condition and preview photographs on request. The piece may be inspected at its plate before any conversation about price begins. That is how an auction house works: you see the work first.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span class="caps">KAFENADED® · Auction House est. 2018</span>
+  <p><a href="index.html">Return to the catalogue</a> · Instagram <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a></p>
+</footer>
+
+</body>
+</html>
