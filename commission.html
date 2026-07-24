@@ -7,17 +7,17 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   :root{
-    --night:#141b30;
-    --ink:#1d2540;
-    --ink-deep:#0e1424;
-    --moon:#dfe4ee;
-    --moon-dim:#9aa3ba;
-    --gold:#c9a76a;
-    --gold-soft:#a88a55;
-    --paper:#f4eede;
-    --paper-ink:#2a2418;
-    --paper-faint:#7a6f58;
-    --rule:rgba(201,167,106,.35);
+    --night:#0a0c0a;
+    --ink:#12180f;
+    --ink-deep:#060806;
+    --moon:#eef1ea;
+    --moon-dim:#8fa397;
+    --gold:#3fb078;
+    --gold-soft:#2e8659;
+    --paper:#f3f4ee;
+    --paper-ink:#10140e;
+    --paper-faint:#5f7566;
+    --rule:rgba(63,176,120,.35);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -28,8 +28,8 @@
   body{
     background:var(--night);
     background-image:
-      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(201,167,106,.10), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(60,75,120,.25), transparent 70%);
+      radial-gradient(ellipse 90% 45% at 50% -5%, rgba(63,176,120,.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(30,80,55,.25), transparent 70%);
     color:var(--moon);
     font-family:Georgia,'Times New Roman',serif;
     line-height:1.65;
@@ -73,6 +73,9 @@
   .lead{max-width:36em;margin:0 auto 2.2rem;text-align:center;color:var(--moon)}
   .lead .preview{
     margin-top:1rem;color:var(--gold);font-style:italic;
+  }
+  .lead .made{
+    margin-top:1.1rem;color:var(--moon-dim);font-size:.9rem;
   }
 
   /* ---------- the commission slip (paper lot card) ---------- */
@@ -127,7 +130,7 @@
     line-height:1.55;
   }
   .field input:focus,.field textarea:focus{
-    outline:none;border-color:#8a5a2b;
+    outline:none;border-color:#256b47;
   }
   .field .hint{
     font-size:.82rem;font-style:italic;color:var(--paper-faint);
@@ -162,13 +165,13 @@
     border-top:1px solid rgba(122,111,88,.35);
     padding-top:.35rem;
   }
-  .tier .intro{font-size:.74rem;color:#8a5a2b;margin-top:.15rem}
+  .tier .intro{font-size:.74rem;color:#256b47;margin-top:.15rem}
   .tier input:checked + label{
-    border-color:#8a5a2b;
-    box-shadow:inset 0 0 0 1px #8a5a2b;
-    background:rgba(138,90,43,.06);
+    border-color:#256b47;
+    box-shadow:inset 0 0 0 1px #256b47;
+    background:rgba(63,176,120,.08);
   }
-  .tier input:focus-visible + label{outline:2px solid #8a5a2b;outline-offset:2px}
+  .tier input:focus-visible + label{outline:2px solid #256b47;outline-offset:2px}
 
   .slip .note{
     text-align:center;font-size:.84rem;font-style:italic;
@@ -178,21 +181,21 @@
   /* ---------- the bid slip (generated order text) ---------- */
   .bid{
     margin-top:2.6rem;
-    background:linear-gradient(160deg,#182138,#10172b);
+    background:linear-gradient(160deg,#10160f,#0a0f09);
     border:1px solid var(--rule);
     padding:2rem 1.5rem 1.8rem;
     position:relative;text-align:center;
   }
   .bid::before{
     content:"";position:absolute;inset:9px;
-    border:1px solid rgba(201,167,106,.18);pointer-events:none;
+    border:1px solid rgba(63,176,120,.18);pointer-events:none;
   }
   .bid > *{position:relative}
   .bid .caps{display:block;margin-bottom:1.1rem}
   .bid textarea{
     width:100%;
     background:rgba(255,255,255,.03);
-    border:1px solid rgba(201,167,106,.25);
+    border:1px solid rgba(63,176,120,.25);
     color:var(--moon);
     font-family:Georgia,'Times New Roman',serif;
     font-size:.98rem;
@@ -230,6 +233,40 @@
     margin-top:.9rem;color:var(--moon-dim);font-size:.9rem;
   }
 
+  /* ---------- the settlement (pay path, after preview) ---------- */
+  .settle{
+    max-width:44rem;margin:1.6rem auto 0;text-align:center;
+    border:1px solid var(--rule);
+    padding:1.8rem 1.5rem 1.6rem;
+    background:rgba(255,255,255,.02);
+  }
+  .settle .caps{display:block;margin-bottom:.9rem}
+  .settle .settle-copy{color:var(--moon);max-width:34em;margin:0 auto .3rem}
+  .settle .pay{
+    display:inline-block;margin-top:1.1rem;
+    font-family:Verdana,Geneva,sans-serif;
+    font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink-deep);background:var(--gold);
+    padding:.85rem 1.6rem;border-radius:2px;
+  }
+  .settle .pay:hover{background:var(--moon)}
+  .settle .settle-alt{
+    margin-top:1.1rem;color:var(--moon-dim);font-size:.9rem;
+  }
+  .settle .settle-alt em{color:var(--gold);font-style:normal}
+  .settle .settle-intro{
+    margin-top:.6rem;color:var(--moon-dim);font-size:.86rem;font-style:italic;
+  }
+
+  /* ---------- the ladder up to the heirloom line ---------- */
+  .ladder{
+    max-width:40rem;margin:2.4rem auto 0;text-align:center;
+    color:var(--moon-dim);font-size:.94rem;font-style:italic;
+    padding-top:1.6rem;border-top:1px solid var(--rule);
+  }
+  .ladder a{font-style:normal}
+
   footer{
     border-top:1px solid var(--rule);
     text-align:center;padding:2.4rem 1.25rem 2.8rem;
@@ -253,6 +290,7 @@
     <div class="lead">
       <p>Fill in the slip below. It becomes your order, written out and ready to send to the house by Instagram DM. No account, no checkout, nothing leaves this page until you send it yourself.</p>
       <p class="preview">Nothing is owed up front. The house sends a finished page of your child's story first, and you approve it before any payment.</p>
+      <p class="made">Each piece is AI-crafted and human-reviewed by the house: fully original, no licensed characters, made once, for one child.</p>
     </div>
 
     <form class="slip" id="slip" autocomplete="off">
@@ -325,6 +363,16 @@
       <span class="copied" id="copiedMsg" role="status" aria-live="polite"></span>
       <p class="howto">Copy the order, then paste it into a DM to <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a>. The house replies with your preview page.</p>
     </div>
+
+    <div class="settle">
+      <span class="caps">When your preview is approved</span>
+      <p class="settle-copy">Nothing is owed until you have seen a finished page of your child's story and said yes. When you approve it, settle your commission with a tap.</p>
+      <a class="pay" id="payLink" href="https://cash.app/$kafenaded/25">Settle by CashApp · <span id="payAmt">$25</span></a>
+      <p class="settle-alt">Venmo <em>@kafenaded</em> also accepted. The house delivers your files within 48 hours of settling.</p>
+      <p class="settle-intro">First three patrons: the house confirms your intro price with your preview, so you pay the lower figure.</p>
+    </div>
+
+    <p class="ladder">This is the house's entry commission, a story made to be printed at home. For the heirloom editions, bound by hand, numbered, and read aloud in Nicole's voice, the <a href="commissions.html">Legacy line</a> begins at $350.</p>
   </div>
 </section>
 </main>
@@ -337,9 +385,9 @@
 <script>
 (function(){
   var tiers = {
-    "1": {name:"Lot No. I · The Storybook (illustrated PDF)", price:"$25", intro:"$15"},
-    "2": {name:"Lot No. II · The Storybook, Read Aloud (PDF and narrated audio)", price:"$40", intro:"$25"},
-    "3": {name:"Lot No. III · The Storybook, In Motion (PDF, audio, and animated film)", price:"$60", intro:"$40"}
+    "1": {name:"Lot No. I · The Storybook (illustrated PDF)", price:"$25", intro:"$15", pay:"https://cash.app/$kafenaded/25", amt:"$25"},
+    "2": {name:"Lot No. II · The Storybook, Read Aloud (PDF and narrated audio)", price:"$40", intro:"$25", pay:"https://cash.app/$kafenaded/40", amt:"$40"},
+    "3": {name:"Lot No. III · The Storybook, In Motion (PDF, audio, and animated film)", price:"$60", intro:"$40", pay:"https://cash.app/$kafenaded/60", amt:"$60"}
   };
 
   var childName = document.getElementById("childName");
@@ -348,6 +396,8 @@
   var orderText = document.getElementById("orderText");
   var copyBtn = document.getElementById("copyBtn");
   var copiedMsg = document.getElementById("copiedMsg");
+  var payLink = document.getElementById("payLink");
+  var payAmt = document.getElementById("payAmt");
 
   function chosenTier(){
     var checked = document.querySelector('input[name="tier"]:checked');
@@ -376,6 +426,8 @@
       "I understand the house sends a preview page for my approval before any payment."
     );
     orderText.value = lines.join("\n");
+    if (payLink) { payLink.href = t.pay; }
+    if (payAmt) { payAmt.textContent = t.amt; }
   }
 
   function showCopied(text){
