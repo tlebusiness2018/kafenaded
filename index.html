@@ -66,6 +66,11 @@ main{max-width:1240px;margin:0 auto;padding:24px;display:grid;grid-template-colu
 .viewlink:hover{color:var(--req)}
 footer{max-width:1240px;margin:0 auto;padding:14px 24px 48px;color:var(--muted);font-size:12.5px}
 footer a{color:var(--res)}
+.inquire{max-width:1240px;margin:28px auto 0;padding:18px 24px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.inquire p{margin:0;color:var(--muted);font-size:13.5px;flex:1 1 320px}
+.inquire strong{color:var(--ink);font-weight:600}
+.inquire a.cta{display:inline-block;text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.04em;padding:10px 16px;border:1px solid var(--res);color:var(--res);white-space:nowrap}
+.inquire a.cta:hover{background:var(--res);color:var(--surface)}
 </style>
 </head>
 <body>
@@ -73,7 +78,7 @@ footer a{color:var(--res)}
 <header class="hero">
   <p class="eyebrow">KAFENADED® · Auction House · est. 2018</p>
   <h1>The Vault</h1>
-  <p class="sub">Fourteen original works, offered one lot at a time — price on inquiry, by DM to <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a>. And the classics, narrated for the end of the day and prepared as reading editions. Filter by room; the two themes are both the house's.</p>
+  <p class="sub">Fourteen original works, offered one lot at a time — price on inquiry, by DM to <a href="https://ig.me/m/kafenadedcompany">@kafenadedcompany</a>. And the classics, narrated for the end of the day and prepared as reading editions. Filter by room; the two themes are both the house's.</p>
 </header>
 
 <div class="bar">
@@ -85,6 +90,11 @@ footer a{color:var(--res)}
 </div>
 
 <main id="grid"></main>
+
+<section class="inquire">
+  <p><strong>Every lot is priced on inquiry.</strong> Ask about price, measurements or condition photographs and quote the lot number. The house answers by Instagram message.</p>
+  <a class="cta" href="https://ig.me/m/kafenadedcompany">Message the house &rarr;</a>
+</section>
 
 <footer>
   KAFENADED® · Auction House est. 2018 · Instagram <a href="https://instagram.com/kafenadedcompany">@kafenadedcompany</a>. Descriptions are given as the house has presented them; condition photographs on request. No value is asserted the house cannot stand behind.
@@ -110,7 +120,7 @@ const DATA = [
  {type:'lot', cat:'paintings', lot:'No. XIV', title:'Masterpiece Clown', artist:'Dorothy E. Kosoff (1925–2003)', medium:'', img:'art/lot-14.jpg', href:'vault/lot-14.html', note:'Heartbreak and joy in one face; first public presentation. No relation to Leon Kossoff.'},
 
  {type:'room', cat:'narrations', title:'The Listening Room', foot:'Bedtime Business Classics', note:'The classics of business and mind, narrated calmly for the end of the day — fall asleep a little wiser.', link:{href:'https://youtube.com/@kafenaded', label:'youtube.com/@kafenaded', ext:true}},
- {type:'room', cat:'editions', title:'The Library', foot:'In preparation', note:'The same classics, prepared by the house as clean digital reading editions to keep.', link:{href:'https://instagram.com/kafenadedcompany', label:'inquire', ext:true}}
+ {type:'room', cat:'editions', title:'The Library', foot:'In preparation', note:'The same classics, prepared by the house as clean digital reading editions to keep.', link:{href:'https://ig.me/m/kafenadedcompany', label:'inquire', ext:true}}
 ];
 
 const grid = document.getElementById('grid');
